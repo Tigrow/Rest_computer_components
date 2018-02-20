@@ -11,14 +11,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 		DataSourceTransactionManagerAutoConfiguration.class, //
 		HibernateJpaAutoConfiguration.class })*/
 
-public class DemoApplication {
-
-	/*@Autowired
-	private Environment env;*/
+public class ComputerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(ComputerApplication.class, args);
 	}
+
+		/*@Autowired
+	private Environment env;*/
+
 	/*@Bean(name = "dataSource")
 	public DataSource getDataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();

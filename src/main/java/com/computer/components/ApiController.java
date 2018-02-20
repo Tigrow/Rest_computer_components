@@ -21,16 +21,13 @@ public class ApiController {
         this.simpleIntelRepository = simpleIntelRepository;
     }
 
-    /*@GetMapping("/visits")
-    public Iterable<IntelEntity> getVisits() {
-        return visitsRepository.findOne((long)1);
-    }*/
     @GetMapping("/getbyid")
     public IntelEntity GetById(@RequestParam(value="id", defaultValue="1") long id) {
         return intelRepository.findOne(id);
     }
     @GetMapping("/gettwenty")
-    public Iterable<SimpleIntelEntity>GetTwenty(@RequestParam(value = "number",defaultValue = "0")Long number){
-        return simpleIntelRepository.findTop20ByIdGreaterThan(number*20);
+    public Iterable<SimpleIntelEntity>GetTwenty(@RequestParam(value = "number",defaultValue = "0")Long number,
+                                                @RequestParam(value = "name",defaultValue = "")String name){
+        return simpleIntelRepository.findTop20ByIdGreaterThanAndNameContaining(number*20,name);
     }
 }

@@ -32,11 +32,11 @@ public class DemoApplicationTests {
 				.andExpect(content().string(containsString("Welcome to Spring")));
 	}
 
-	@Test
+	/*@Test
 	public void apiControllerShouldReturnVisits() throws Exception {
 		mockMvc.perform(get("/"));
 
 		mockMvc.perform(get("/api/visits"))
 				.andExpect(jsonPath("$.*.description", iterableWithSize(1)));
-	}
+	}*/
 }
