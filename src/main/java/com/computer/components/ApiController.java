@@ -4,6 +4,7 @@ import com.computer.components.entities.IntelEntity;
 import com.computer.components.entities.SimpleIntelEntity;
 import com.computer.components.repository.IntelRepository;
 import com.computer.components.repository.SimpleIntelRepository;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,8 +27,8 @@ public class ApiController {
         return intelRepository.findOne(id);
     }
     @GetMapping("/gettwenty")
-    public Iterable<SimpleIntelEntity>GetTwenty(@RequestParam(value = "number",defaultValue = "0")Long number,
+    public Iterable<SimpleIntelEntity>GetTwenty(@RequestParam(value = "number",defaultValue = "0")int number,
                                                 @RequestParam(value = "name",defaultValue = "")String name){
-        return simpleIntelRepository.findTop20ByIdGreaterThanAndNameContaining(number*20,name);
+        return simpleIntelRepository.find20Intel(name,new PageRequest(number, 20));
     }
 }

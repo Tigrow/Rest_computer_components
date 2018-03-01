@@ -10,14 +10,16 @@ public class SimpleIntelEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id")
     private long id;
-    @Column(name="name")
+    @Column(name="Name")
     private String name;
-    @Column(name="code_name")
+    @Column(name="`Code Name`")
     private String codename;
-    @Column(name="cores")
+    @Column(name="Launch_Date")
+    private String launchDate;
+    /*@Column(name="# of Cores")
     private int Cores;
-    @Column(name="threads")
-    private int Threads;
+    @Column(name="# of Threads")
+    private int Threads;*/
 
     public long getId() {
         return id;
@@ -39,7 +41,7 @@ public class SimpleIntelEntity {
     public void setCodename(String name) {
         this.codename = name;
     }
-
+/*
     public int getCores() {
         return Cores;
     }
@@ -52,5 +54,5 @@ public class SimpleIntelEntity {
     }
     public void setThreads(int Threads) {
         this.Threads = Threads;
-    }
+    }*/
 }
